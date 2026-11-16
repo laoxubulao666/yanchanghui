@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e20">
+  <meta name="description" content="用演唱会指南对照票面找分区与座位，预览从看台望向舞台的 3D 视角，提前查好场馆交通和散场路线。">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="演唱会指南">
+  <meta property="og:title" content="演唱会指南｜开场前，先看看座位">
+  <meta property="og:description" content="查座位图、预览 3D 座位视角、提前安排场馆出行。">
+  <title>演唱会指南｜座位图、3D 视角与场馆交通</title>
+  <link rel="icon" type="image/png" href="./assets/app-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./scripts.js"></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <img src="./assets/app-icon.png" width="38" height="38" alt="">
+        <span>演唱会指南</span>
+      </a>
+      <nav aria-label="主导航">
+        <a href="#preview">座位预览</a>
+        <a href="#traffic">场馆出行</a>
+        <a href="#faq">常见问题</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">开场前，<br><span>先看看座位。</span></h1>
+          <p>对照票面找到分区，切到 3D 看看舞台在哪个方向。怎么到场、散场怎么回，也可以提前查好。</p>
+          <a class="button" href="#preview">体验座位预览 <span class="arrow" aria-hidden="true"></span></a>
+        </div>
+
+        <figure class="hero-visual">
+          <div class="hero-devices">
+            <img class="device hero-map" src="./assets/event-map.webp" width="710" height="1544" alt="演唱会指南的二维座位图，中央舞台外环绕着各区看台。">
+            <img class="device hero-seat" src="./assets/seat-view.webp" width="710" height="1544" alt="演唱会指南的 3D 模拟画面，从看台可以看到演出舞台与前方座位。" fetchpriority="high">
+          </div>
+          <figcaption><span class="indicator" aria-hidden="true"></span> App 界面 · 3D 模拟视角</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section preview wrap" id="preview" aria-labelledby="preview-title" data-preview>
+      <div class="section-heading">
+        <h2 id="preview-title">把票面上的位置<br>变成看得懂的座位</h2>
+        <p>按城市逛场馆，也可以搜索场馆、艺人或演出。打开对应场次，顺着票面上的分区、排号和座号找位置。</p>
+      </div>
+
+      <div class="preview-shell">
+        <div class="tabs" data-tabs role="tablist" aria-label="切换 App 界面预览" hidden>
+          <button type="button" role="tab" id="tab-map" aria-controls="panel-map" aria-selected="true">二维座位图</button>
+          <button type="button" role="tab" id="tab-view" aria-controls="panel-view" aria-selected="false" tabindex="-1">3D 模拟视角</button>
+          <button type="button" role="tab" id="tab-finder" aria-controls="panel-finder" aria-selected="false" tabindex="-1">按票面查找</button>
+        </div>
+
+        <article class="preview-panel panel-map" id="panel-map" data-panel>
+          <div class="preview-image">
+            <img class="device" src="./assets/event-map.webp" width="710" height="1544" loading="lazy" alt="二维座位图示例，标出了中央舞台、内场和环形看台。">
+          </div>
+          <div class="panel-copy">
+            <h3>先认清舞台在哪一边</h3>
+            <p>打开对应场次的二维座位图，一眼分清舞台、内场和看台。缩放图面或按楼层筛选，就能找到票面对应的区域。</p>
+          </div>
+        </article>
+
+        <article class="preview-panel panel-view" id="panel-view" data-panel>
+          <div class="preview-image">
+            <img class="device" src="./assets/seat-view.webp" width="710" height="1544" loading="lazy" alt="从看台望向舞台的 3D 座位视角示例。">
+          </div>
+          <div class="panel-copy">
+            <h3>从看台望一眼舞台</h3>
+            <p>支持 3D 的场次可以切到分区或座位视角。拖动看看周围的看台，缩放看看舞台的方向和远近。</p>
+            <p class="annotation">三维画面为模拟预览，实际视野以现场为准。</p>
+          </div>
+        </article>
+
+        <article class="preview-panel panel-finder" id="panel-finder" data-panel>
+          <div class="preview-image">
+            <img class="device" src="./assets/seat-finder.webp" width="660" height="1435" loading="lazy" alt="App 的位置面板，包含楼层筛选、区域搜索和分区列表。">
+          </div>
+          <div class="panel-copy">
+            <h3>拿着票，就能对着找</h3>
+            <p>输入分区编号或名称，直接找对应区域。已录入排座资料的区域，还能继续选择排号和座号。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section traffic wrap" id="traffic" aria-labelledby="traffic-title">
+      <div class="traffic-feature">
+        <div class="traffic-copy">
+          <h2 id="traffic-title">到场和返程<br>都提前查好</h2>
+          <p>去哪个入口附近下车、车停哪里、散场怎么回？在场馆交通页查看地址、公共交通、自驾停车和打车信息，需要时打开地图应用查询。</p>
+          <p class="annotation">交通安排可能随场次调整，出发前请核对场馆公告。</p>
+        </div>
+        <figure class="traffic-visual">
+          <img class="stadium-image" src="./assets/hangzhou-stadium.webp" width="1200" height="576" loading="lazy" alt="杭州奥体中心体育场「大莲花」的夜景示意。">
+          <img class="device traffic-screen" src="./assets/venue-transport.webp" width="710" height="1544" loading="lazy" alt="杭州奥体中心体育场的交通停车页面，展示自驾停车参考。">
+          <figcaption>杭州奥体中心体育场 · 交通页示例</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section faq wrap" id="faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">常见问题</h2>
+      <div class="faq-list">
+        <details>
+          <summary>每个场次都能查到排号和座号吗？</summary>
+          <p>可查范围取决于对应场次的座位图。录入了排座资料的区域可以查到排号和座号，其他区域可查看分区位置。请以票面和主办方公布的座位图为准。</p>
+        </details>
+        <details>
+          <summary>3D 预览和现场看到的一样吗？</summary>
+          <p>3D 预览用来参考舞台的大致方向和距离。临时布景、设备、护栏和观众都可能影响实际视野。</p>
+        </details>
+        <details>
+          <summary>到现场网络不好，还能看座位图吗？</summary>
+          <p>App 收录的座位图和交通资料支持离线查看。打开外部地图查询实时路线时，可能需要联网。</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#top">
+        <img src="./assets/app-icon.png" width="34" height="34" alt="">
+        <span>演唱会指南</span>
+      </a>
+      <a href="./privacy.html">隐私说明</a>
+    </div>
+  </footer>
+</body>
+</html>
