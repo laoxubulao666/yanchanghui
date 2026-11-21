@@ -16,7 +16,14 @@
 *, *::before, *::after { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { scroll-behavior: smooth; }
-body { margin: 0; line-height: 1.65; }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.65;
+}
 img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { color: inherit; font: inherit; }
@@ -400,16 +407,27 @@ h2 {
 .faq details[open] summary::before { display: none; }
 .faq details p { padding: 0 30px 18px 1px; color: var(--copy); line-height: 1.85; }
 
-.site-footer { border-top: 1px solid var(--line); background: #0c1225; }
-.footer-inner { min-height: 90px; }
+.site-footer { margin-block-start: auto; border-top: 1px solid var(--line); background: #0c1225; }
+.footer-inner { min-height: 90px; flex-wrap: wrap; row-gap: 8px; padding-block: 16px; }
 .footer-inner .brand { font-size: 14px; }
 
 .document { max-width: 740px; padding-block: 72px 90px; }
 .document h1 { font-size: clamp(36px, 5vw, 58px); letter-spacing: -.04em; }
+.document .document-date { margin-top: 12px; font-size: 14px; }
 .document .document-intro { margin-top: 20px; padding-bottom: 27px; border-bottom: 1px solid var(--line); }
 .document section { margin-top: 27px; }
 .document h2 { font-size: 22px; margin-bottom: 8px; }
 .document p { color: var(--copy); line-height: 1.85; }
+.document p + p { margin-top: 10px; }
+.document-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.document-links a { color: var(--cyan); text-decoration: underline; text-underline-offset: .2em; }
 
 @media (max-width: 960px) {
   .wrap { width: calc(100% - 52px); }
